@@ -1,0 +1,8 @@
+---
+# handler file for cloud-sql-proxy
+- name: Daemon_reload
+  ansible.builtin.systemd:
+    name: petclinic.service
+    state: started
+    daemon_reload: yes
+    enabled: yes

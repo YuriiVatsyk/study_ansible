@@ -1,0 +1,8 @@
+---
+ - name: ansible hometasks for petclinic app
+   hosts: petclinic_app
+   become: true
+   roles: 
+    - role: base
+    - role: cloud-sql-proxy
+    - role: petclinic-app

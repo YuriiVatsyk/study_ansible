@@ -1,0 +1,12 @@
+---
+- name: Update and upgrade apt packages
+  ansible.builtin.apt:
+    upgrade: yes
+    update_cache: yes
+
+- name: Install openjdk-11-jdk
+  ansible.builtin.apt:
+    name: openjdk-11-jdk
+    state: present
+    install_recommends: no
+

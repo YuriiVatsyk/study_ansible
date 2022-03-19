@@ -1,0 +1,13 @@
+---
+- name: Download cloud_sql_proxy
+  get_url:
+    url: https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64
+    dest: /usr/local/bin/cloud_sql_proxy
+    mode: '0777'
+
+
+- name: Copy petclinic.service file
+  ansible.builtin.template:
+      src: cloud-sql-proxy.service.j2
+      dest: /etc/systemd/system/cloud-sql-proxy.service
+  notify: Daemon_reload
